@@ -11,10 +11,9 @@
   *{box-sizing:border-box}
   body{margin:0;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#000;}
 
-  /* Arka plan Sığdır (contain) */
   .hero{
     min-height:100vh;
-    background:#000 url("hero.jpg") center/contain no-repeat; /* <-- sığdırma */
+    background:#000 url("hero.jpg") center/contain no-repeat;
     position:relative;
     display:flex;
     align-items:center;
@@ -22,7 +21,6 @@
     overflow:hidden;
   }
 
-  /* Yazıların olduğu SOL tarafta hafif karartma (gradient) */
   .hero::before{
     content:"";
     position:absolute;
@@ -39,7 +37,7 @@
   .wrap{
     width:min(1100px, 92vw);
     margin-left: clamp(18px, 8vw, 110px);
-    position:relative; /* overlay üstüne gelsin */
+    position:relative;
     z-index:2;
   }
 
@@ -110,18 +108,31 @@
     box-shadow: 0 0 18px rgba(0,0,0,.55);
   }
 
+  /* MOBİL SADECE YAZI KÜÇÜLTME */
   @media (max-width: 768px){
-    .wrap{ margin-left: 18px; }
-    .rail{ padding-left: 16px; }
-    .line{ width: 120px; }
 
-    /* mobilde yazılar daha okunur olsun diye karartmayı biraz artır */
-    .hero::before{
-      background: linear-gradient(90deg,
-        rgba(0,0,0,0.70) 0%,
-        rgba(0,0,0,0.55) 35%,
-        rgba(0,0,0,0.22) 62%,
-        rgba(0,0,0,0.00) 80%);
+    .badge{
+      font-size:10px;
+      letter-spacing:.28em;
+    }
+
+    .title{
+      font-size: 42px;   /* küçültüldü */
+      line-height:1.1;
+    }
+
+    .line{
+      width:100px;
+    }
+
+    .subtitle{
+      font-size:14px;   /* küçültüldü */
+      line-height:1.6;
+    }
+
+    .soon{
+      font-size:10px;
+      letter-spacing:.22em;
     }
   }
 </style>
