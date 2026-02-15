@@ -1,92 +1,110 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>EKALITH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Inter', sans-serif;
-}
+  body{margin:0;font-family:'Inter',sans-serif;}
 
-.hero{
-  height:100vh;
-  background:url("hero.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  color:#111;
-}
+  /* ORJİNAL arka plan */
+  .hero{
+    height:100vh;
+    background:url("hero.jpg") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+  }
 
-.content{
-  padding-left:8%;
-  max-width:750px;
-}
+  .content{
+    padding-left:8%;
+    max-width:820px;
+  }
 
-/* Üst küçük başlık */
-.badge{
-  font-size:13px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-  color:#555;
-  margin-bottom:30px;
-}
+  /* Hafif cam panel: arka plana dokunmaz, sadece yazının arkasında */
+  .panel{
+    display:inline-block;
+    padding:22px 26px 26px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border:1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+  }
 
-/* EKALITH büyük başlık */
-h1{
-  font-family:'Playfair Display', serif;
-  font-size:100px;
-  margin:0;
-  font-weight:700;
-  letter-spacing:2px;
-  color:#111;
-  position:relative;
-}
+  .badge{
+    font-size:12px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:#fff;
+    opacity:.95;
+    text-shadow:
+      0 2px 10px rgba(0,0,0,0.55),
+      0 0 22px rgba(255,255,255,0.15);
+    margin-bottom:18px;
+  }
 
-/* Alt çizgi */
-h1::after{
-  content:"";
-  position:absolute;
-  bottom:-20px;
-  left:0;
-  width:140px;
-  height:3px;
-  background:#111;
-}
+  h1{
+    font-family:'Playfair Display',serif;
+    font-size:96px;
+    margin:0;
+    font-weight:700;
+    letter-spacing:2px;
 
-/* Alt açıklama */
-.subtitle{
-  margin-top:50px;
-  font-size:24px;
-  font-weight:300;
-  line-height:1.8;
-  color:#222;
-}
+    /* okunurluk: beyaz + kontur + gölge */
+    color:#fff;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.55);
+    text-shadow:
+      0 10px 30px rgba(0,0,0,0.55),
+      0 0 28px rgba(255,255,255,0.18);
+    position:relative;
+  }
 
-@media(max-width:768px){
-  h1{font-size:55px;}
-  .subtitle{font-size:18px;}
-}
+  h1::after{
+    content:"";
+    position:absolute;
+    bottom:-16px;
+    left:0;
+    width:150px;
+    height:3px;
+    background:rgba(255,255,255,0.75);
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  .subtitle{
+    margin-top:36px;
+    font-size:22px;
+    font-weight:300;
+    line-height:1.75;
+
+    color:rgba(255,255,255,0.96);
+    text-shadow: 0 6px 20px rgba(0,0,0,0.55);
+  }
+
+  @media(max-width:768px){
+    .content{padding-left:6%;}
+    h1{font-size:56px;}
+    .subtitle{font-size:18px;}
+    .panel{padding:18px 18px 20px;}
+  }
 </style>
 </head>
 
 <body>
-
-<section class="hero">
-  <div class="content">
-    <div class="badge">MINERAL KOMPOZİT</div>
-
-    <h1>EKALITH</h1>
-
-    <div class="subtitle">
-      Yeni nesil yapı kompoziti.<br>
-      Dayanıklı, hafif ve modern yüzey teknolojisi.
+  <section class="hero">
+    <div class="content">
+      <div class="panel">
+        <div class="badge">MINERAL KOMPOZİT</div>
+        <h1>EKALITH</h1>
+        <div class="subtitle">
+          Yeni nesil yapı kompoziti.<br>
+          Dayanıklı, hafif ve modern yüzey teknolojisi.
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </body>
 </html>
