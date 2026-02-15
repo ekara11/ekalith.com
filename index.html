@@ -1,117 +1,99 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EKALITH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  body{margin:0;font-family:'Inter',sans-serif;}
-  .hero{
-    height:100vh;
-    background:url("hero.jpg") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-  }
-  .content{
-    padding-left:8%;
-    max-width:900px;
-  }
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+}
 
-  .badge{
-    font-size:12px;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.92);
-    text-shadow:0 6px 20px rgba(0,0,0,.55);
-    margin-bottom:18px;
-  }
+.hero{
+  height:100vh;
+  background:url("hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding-left:8%;
+}
 
-  /* Neon turuncu-kırmızı */
-  .title{
-    font-weight:900;
-    font-size:clamp(54px,6.8vw,110px);
-    margin:0;
-    line-height:1.02;
-    letter-spacing:1px;
+.content{
+  max-width:800px;
+}
 
-    background:linear-gradient(90deg,#ff3d3d 0%, #ff7a00 45%, #ffd36a 100%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.badge{
+  font-size:12px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:#ffffff;
+  margin-bottom:20px;
+  text-shadow:0 4px 20px rgba(0,0,0,0.6);
+}
 
-    text-shadow:
-      0 10px 35px rgba(0,0,0,.55),
-      0 0 18px rgba(255,80,60,.45),
-      0 0 34px rgba(255,140,0,.28);
-  }
+.title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(60px,7vw,110px);
+  margin:0;
+  font-weight:900;
+  color:#ffffff;
+  text-shadow:
+      0 6px 30px rgba(0,0,0,0.65),
+      0 2px 8px rgba(0,0,0,0.7);
+}
 
-  .line{
-    width:160px;
-    height:3px;
-    margin:18px 0 22px;
-    background:linear-gradient(90deg, rgba(255,61,61,.9), rgba(255,122,0,.9));
-    box-shadow:0 0 18px rgba(255,122,0,.35);
-  }
+.line{
+  width:140px;
+  height:3px;
+  background:#ffffff;
+  margin:25px 0;
+  opacity:0.85;
+}
 
-  .subtitle{
-    font-size:clamp(18px,2vw,24px);
-    line-height:1.65;
-    color:rgba(255,255,255,.93);
-    text-shadow:0 8px 22px rgba(0,0,0,.6);
-    margin:0 0 18px;
-  }
+.subtitle{
+  font-size:clamp(18px,2vw,24px);
+  line-height:1.7;
+  color:#ffffff;
+  text-shadow:0 4px 18px rgba(0,0,0,0.7);
+}
 
-  .soon{
-    display:inline-flex;
-    gap:10px;
-    align-items:center;
-    font-size:14px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.92);
-    text-shadow:0 8px 22px rgba(0,0,0,.6);
-  }
+.soon{
+  margin-top:25px;
+  font-size:14px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#ffffff;
+  opacity:0.9;
+  text-shadow:0 4px 18px rgba(0,0,0,0.7);
+}
 
-  .dot{
-    width:10px;height:10px;border-radius:50%;
-    background:linear-gradient(180deg,#ff3d3d,#ff7a00);
-    box-shadow:0 0 14px rgba(255,120,0,.55), 0 0 28px rgba(255,60,60,.30);
-    animation:pulse 1.2s ease-in-out infinite;
-  }
-
-  @keyframes pulse{
-    0%,100%{transform:scale(1); opacity:.9;}
-    50%{transform:scale(1.35); opacity:1;}
-  }
-
-  @media(max-width:768px){
-    .content{padding-left:6%;}
-    .line{width:120px;}
-  }
+@media(max-width:768px){
+  .hero{padding-left:6%;}
+}
 </style>
 </head>
 
 <body>
-  <section class="hero">
-    <div class="content">
-      <div class="badge">MINERAL KOMPOZİT</div>
 
-      <h1 class="title">EKALITH</h1>
+<section class="hero">
+  <div class="content">
+    <div class="badge">MINERAL KOMPOZİT</div>
 
-      <div class="line"></div>
+    <h1 class="title">EKALITH</h1>
 
-      <p class="subtitle">
-        Yeni nesil yapı kompoziti.<br>
-        Dayanıklı, hafif ve modern yüzey teknolojisi.
-      </p>
+    <div class="line"></div>
 
-      <div class="soon">
-        <span class="dot"></span>
-        ÇOK YAKINDA
-      </div>
-    </div>
-  </section>
+    <p class="subtitle">
+      Yeni nesil yapı kompoziti.<br>
+      Dayanıklı, hafif ve modern yüzey teknolojisi.
+    </p>
+
+    <div class="soon">ÇOK YAKINDA</div>
+  </div>
+</section>
+
 </body>
 </html>
