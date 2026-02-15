@@ -1,1 +1,83 @@
-<img src="/hero.jpg" style="max-width:600px;width:100%;border:3px solid red;">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EKALITH</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding-left: 8%;
+  max-width: 800px;
+}
+
+.badge {
+  letter-spacing: 4px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+  padding-bottom: 20px;
+}
+
+.subtitle {
+  margin-top: 25px;
+  font-size: 22px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <div class="badge">MINERAL KOMPOZİT</div>
+    <h1>EKALITH</h1>
+    <div class="subtitle">
+      Yeni nesil yapı kompoziti.<br>
+      Dayanıklı, hafif, modern yüzey çözümleri.
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
