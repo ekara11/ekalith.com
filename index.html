@@ -8,81 +8,94 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
+body{
+    font-family:'Inter',sans-serif;
 }
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('hero.jpg') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
+/* ARKA PLAN TAM EKRAN */
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:url("hero.jpg") center center / cover no-repeat;
+    display:flex;
+    align-items:center;
 }
 
-/* Profesyonel, hafif karartma */
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0,0,0,0.55) 0%,
-        rgba(0,0,0,0.35) 40%,
-        rgba(0,0,0,0.15) 100%
+/* SADE VE DENGELİ KARARTMA */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,0.40) 0%,
+        rgba(0,0,0,0.28) 35%,
+        rgba(0,0,0,0.12) 65%,
+        rgba(0,0,0,0.00) 85%
     );
 }
 
-/* İçerik */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin-left: 8%;
-    color: #ffffff;
+/* YAZI BLOĞU */
+.content{
+    position:relative;
+    z-index:2;
+    margin-left:8%;
+    max-width:700px;
+    color:#ffffff;
 }
 
-.small-title {
-    letter-spacing: 6px;
-    font-size: 12px;
-    opacity: 0.9;
-    margin-bottom: 25px;
+/* ÜST YAZI */
+.badge{
+    font-size:12px;
+    letter-spacing:6px;
+    margin-bottom:25px;
+    opacity:0.9;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 110px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-shadow: 0 8px 30px rgba(0,0,0,0.6);
+/* BAŞLIK */
+.title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(60px,7vw,110px);
+    font-weight:700;
+    margin-bottom:25px;
+    text-shadow:0 8px 35px rgba(0,0,0,0.7);
 }
 
-.line {
-    width: 120px;
-    height: 2px;
-    background: #ffffff;
-    margin-bottom: 30px;
+/* ÇİZGİ */
+.line{
+    width:120px;
+    height:2px;
+    background:#ffffff;
+    margin-bottom:30px;
 }
 
-.desc {
-    font-size: 20px;
-    line-height: 1.6;
-    font-weight: 300;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+/* ALT METİN */
+.subtitle{
+    font-size:clamp(18px,2vw,22px);
+    line-height:1.6;
+    font-weight:300;
+    text-shadow:0 4px 20px rgba(0,0,0,0.7);
 }
 
-.soon {
-    margin-top: 40px;
-    font-size: 14px;
-    letter-spacing: 4px;
-    opacity: 0.9;
+/* ÇOK YAKINDA */
+.soon{
+    margin-top:35px;
+    font-size:14px;
+    letter-spacing:4px;
+    opacity:0.9;
+}
+
+@media(max-width:768px){
+    .content{
+        margin-left:6%;
+    }
 }
 </style>
 </head>
@@ -90,14 +103,18 @@ h1 {
 <body>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="small-title">MINERAL KOMPOZİT</div>
-        <h1>EKALITH</h1>
+    <div class="content">
+        <div class="badge">MINERAL KOMPOZİT</div>
+
+        <h1 class="title">EKALITH</h1>
+
         <div class="line"></div>
-        <div class="desc">
+
+        <div class="subtitle">
             Yeni nesil yapı kompoziti.<br>
             Dayanıklı, hafif ve modern yüzey teknolojisi.
         </div>
+
         <div class="soon">ÇOK YAKINDA</div>
     </div>
 </section>
