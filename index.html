@@ -1,126 +1,138 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>EKALITH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-}
+  :root{
+    --ink: rgba(255,255,255,.96);
+    --shadow: rgba(0,0,0,.72);
+  }
 
-.hero{
-  height:100vh;
-  background:url("hero.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding-left:10%;
-}
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
-/* Ana blok */
-.content{
-  max-width:750px;
-}
-
-/* Üst teknik ibare */
-.badge{
-  font-size:11px;
-  letter-spacing:6px;
-  text-transform:uppercase;
-  color:#f5f5f5;
-  margin-bottom:25px;
-
-  text-shadow:
-      0 3px 12px rgba(0,0,0,0.9);
-}
-
-/* Marka */
-.title{
-  font-size:clamp(70px,8vw,120px);
-  font-weight:900;
-  margin:0;
-  line-height:1;
-
-  color:#ffffff;
-
-  text-shadow:
-      0 10px 40px rgba(0,0,0,0.75),
-      0 2px 8px rgba(0,0,0,0.8);
-}
-
-/* İnce vurgu çizgisi */
-.line{
-  width:120px;
-  height:2px;
-  background:rgba(255,255,255,0.85);
-  margin:30px 0;
-}
-
-/* Açıklama */
-.subtitle{
-  font-size:clamp(18px,2vw,22px);
-  line-height:1.7;
-  color:#f1f1f1;
-
-  text-shadow:
-      0 4px 18px rgba(0,0,0,0.85);
-}
-
-/* Çok yakında */
-.soon{
-  margin-top:35px;
-  font-size:13px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:#ffffff;
-  opacity:0.85;
-
-  text-shadow:
-      0 3px 12px rgba(0,0,0,0.9);
-}
-
-/* Responsive */
-@media(max-width:768px){
+  /* Arka plan ORJİNAL. Sadece kadrajı aşağı kaydırıyoruz (üstteki yazılar görünmesin diye). */
   .hero{
-    padding-left:6%;
+    min-height:100vh;
+    background-image:url("hero.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 68%; /* <-- bunu 60-80 arası oynatabilirsin */
+    display:flex;
+    align-items:center;
+    padding: min(10vh, 90px) 0;
   }
+
+  .wrap{
+    width:min(1100px, 92vw);
+    margin-left: clamp(18px, 8vw, 110px);
+  }
+
+  /* Ajans işi hizalama: ince sol çizgi + net hiyerarşi */
+  .rail{
+    border-left: 1px solid rgba(255,255,255,.45);
+    padding-left: 22px;
+    max-width: 720px;
+  }
+
+  .badge{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.38em;
+    text-transform:uppercase;
+    color: rgba(255,255,255,.92);
+
+    /* okunurluk (overlay yok!) */
+    text-shadow: 0 2px 10px var(--shadow);
+    -webkit-text-stroke: .35px rgba(0,0,0,.55);
+  }
+
   .title{
-    font-size:56px;
+    margin: 14px 0 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight:700;
+    font-size: clamp(56px, 7vw, 108px);
+    letter-spacing: .06em;
+    line-height: .98;
+    color: var(--ink);
+
+    /* premium okunurluk: derin, temiz */
+    text-shadow:
+      0 14px 40px rgba(0,0,0,.65),
+      0 2px 10px rgba(0,0,0,.75);
+    -webkit-text-stroke: .7px rgba(0,0,0,.45);
   }
-}
+
+  .line{
+    width: 160px;
+    height: 2px;
+    background: rgba(255,255,255,.78);
+    box-shadow: 0 8px 22px rgba(0,0,0,.35);
+    margin: 18px 0 18px;
+  }
+
+  .subtitle{
+    margin:0;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255,255,255,.94);
+
+    text-shadow: 0 6px 22px rgba(0,0,0,.70);
+    -webkit-text-stroke: .35px rgba(0,0,0,.55);
+  }
+
+  .soon{
+    margin-top: 22px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size: 12px;
+    letter-spacing: .32em;
+    text-transform:uppercase;
+    color: rgba(255,255,255,.92);
+
+    text-shadow: 0 5px 18px rgba(0,0,0,.70);
+    -webkit-text-stroke: .35px rgba(0,0,0,.55);
+  }
+
+  .dot{
+    width:10px; height:10px; border-radius:50%;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 0 18px rgba(0,0,0,.35);
+    opacity:.9;
+  }
+
+  /* Mobil kadrajı biraz daha aşağı kaydır */
+  @media (max-width: 768px){
+    .hero{ background-position:50% 75%; }
+    .wrap{ margin-left: 18px; }
+    .rail{ padding-left: 16px; }
+    .line{ width: 120px; }
+  }
 </style>
 </head>
 
 <body>
-
-<section class="hero">
-  <div class="content">
-
-    <div class="badge">
-      ENGINEERED MINERAL SURFACES
+  <section class="hero">
+    <div class="wrap">
+      <div class="rail">
+        <div class="badge">MINERAL KOMPOZİT</div>
+        <h1 class="title">EKALITH</h1>
+        <div class="line"></div>
+        <p class="subtitle">
+          Yeni nesil yapı kompoziti.<br>
+          Dayanıklı, hafif ve modern yüzey teknolojisi.
+        </p>
+        <div class="soon"><span class="dot"></span>ÇOK YAKINDA</div>
+      </div>
     </div>
-
-    <h1 class="title">
-      EKALITH
-    </h1>
-
-    <div class="line"></div>
-
-    <p class="subtitle">
-      Yeni nesil yapı kompoziti.<br>
-      Dayanıklı, hafif ve modern yüzey teknolojisi.
-    </p>
-
-    <div class="soon">
-      ÇOK YAKINDA
-    </div>
-
-  </div>
-</section>
-
+  </section>
 </body>
 </html>
